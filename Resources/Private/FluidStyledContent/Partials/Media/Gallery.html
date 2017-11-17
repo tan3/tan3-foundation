@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+  <f:if condition="{gallery.rows}">
+  <div class="media {f:if(condition: gallery.position.noWrap, then: 'media--beside', else: 'media--{gallery.position.vertical}')} media--{gallery.position.horizontal}" data-media-columns="{gallery.count.columns}" data-media-images="{gallery.count.files}">
+      <f:for each="{gallery.rows}" as="row">
+        <div class="media__row">
+          <f:for each="{row.columns}" as="column">
+            <f:if condition="{column.media}">
+              <div class="media__column">
+                <figure class="media__item{f:if(condition: data.imageborder, then: ' media__item--border')}">
+                  <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                </figure>
+              </div>
+            </f:if>
+          </f:for>
+        </div>
+      </f:for>
+    </div>
+  </f:if>
+</html>

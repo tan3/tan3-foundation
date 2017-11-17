@@ -1,0 +1,24 @@
+{
+  "name": "tan3/tan3-foundation",
+  "description": "Foundation Template",
+  "type": "typo3-cms-extension",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "tan3",
+      "email": "info@tan3.de"
+    }
+  ],
+  "minimum-stability": "dev",
+  "replace": {
+    "tan3_foundation": "self.version"
+  },
+  "require": {
+    "typo3/cms": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tan3\\Foundation\\": "Classes/"
+    }
+  }
+}
